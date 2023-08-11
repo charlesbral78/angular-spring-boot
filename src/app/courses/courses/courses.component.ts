@@ -6,7 +6,8 @@ import { catchError } from 'rxjs/operators';
 
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -17,7 +18,6 @@ export class CoursesComponent implements OnInit {
 
   courses$: Observable<Course[]>;
   //courses: Course[] = [];
-  displayedColumns = ['name', 'category', 'actions'];
 
   // coursesService: CoursesService;
 
@@ -49,7 +49,7 @@ export class CoursesComponent implements OnInit {
 
   }
 
-  adicionarCurso() {
+  onAdd() {
     this.router.navigate(['new'], {relativeTo: this.route});
   }
 }
